@@ -110,10 +110,10 @@ class RepoBinReqImpl @Inject constructor(
 
     override suspend fun getAllBinReq() {
         try {
-//            val bins = binDao.getAllReq().map(List<BinReqEntity>::toDto)
-//            bins.flowOn(Dispatchers.IO).collect{list ->
-//                _binReqFlow.update { list }
-//            }
+            val bins = binDao.getAllReq().map(List<BinReqEntity>::toDto)
+            bins.flowOn(Dispatchers.IO).collect{list ->
+                _binReqFlow.update { list }
+            }
 
             binDao.getAllReq().flowOn(Dispatchers.IO).collect { list ->
                 _binReqFlow.update { list.toDto() }
