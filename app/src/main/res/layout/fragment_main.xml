@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainFragment">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/min_space">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/bankName"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:layout_marginTop="@dimen/common_spacing"
+                android:hint="Bank name"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconContentDescription="Bank Name"
+                app:startIconDrawable="@drawable/ico_bank_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/bankLink"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="Bank Link"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bankName"
+                app:startIconContentDescription="Website"
+                app:startIconDrawable="@drawable/ico_link_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/bankPhone"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="Bank Phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bankLink"
+                app:startIconContentDescription="Bank Phone"
+                app:startIconDrawable="@drawable/ico_phone_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/country"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="Country"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bankPhone"
+                app:startIconContentDescription="Country">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/code"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="Code"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/country"
+                app:startIconContentDescription="code">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/flag"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="Flag"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/code"
+                app:startIconContentDescription="flag">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/currency"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="currency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flag"
+                app:startIconContentDescription="currency">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/currency_code"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="currency code"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/currency"
+                app:startIconContentDescription="currency_code">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/card_type"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="card type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/currency_code"
+                app:startIconContentDescription="card_type">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/card_scheme"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="card scheme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_type"
+                app:startIconContentDescription="card_scheme">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/category"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="category"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_scheme"
+                app:startIconContentDescription="category">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cvvlen"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="cvv length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/category"
+                app:startIconContentDescription="cvvlen">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_bin"
+        style="@style/Theme.MaterialComponents.DayNight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
+        app:menu="@menu/menu_bin" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
