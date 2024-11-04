@@ -13,8 +13,8 @@ ext {
 
 private String getApiKey() {
     Properties properties = new Properties()
-    if (rootProject.file("keyapi.properties").exists()) {
-        properties.load(rootProject.file("keyapi.properties").newDataInputStream())
+    if (rootProject.file("keyapirapid.properties").exists()) {
+        properties.load(rootProject.file("keyapirapid.properties").newDataInputStream())
     }
     return properties.getProperty("API_KEY", "")
 }
@@ -41,11 +41,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", '"https://api.bintable.com"'
+            buildConfigField "String", "BASE_URL", '"https://bin-ip-checker.p.rapidapi.com"'
         }
         debug {
             manifestPlaceholders.usesCleartextTraffic = true
-            buildConfigField "String", "BASE_URL", '"https://api.bintable.com"'
+            buildConfigField "String", "BASE_URL", '"https://bin-ip-checker.p.rapidapi.com"'
         }
     }
     compileOptions {

@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import ru.netology.binlist.dto.BinRequest
+import ru.netology.binlist.error.DbError
 import ru.netology.binlist.model.FeedModelState
 import ru.netology.binlist.repo.RepoBinReq
 import javax.inject.Inject
@@ -26,29 +27,24 @@ class BinReqViewModel @Inject constructor(
     val dataState: LiveData<FeedModelState>
         get() = _dataState
 
-    private val _binReq = MutableLiveData<BinRequest>()
+    private val _binReq = MutableLiveData(BinRequest(id = 0))
     val binReq: LiveData<BinRequest>
         get() = _binReq
 
-    val listBins: LiveData<List<BinRequest>> = repo.binReqFlow.asLiveData(Dispatchers.IO)
+    val listBins: LiveData<List<BinRequest>> = repo.binReqFlow.asLiveData(Dispatchers.Default)
 
     init {
-        loadReq(403244)
+ //       loadReq(403244)
         getBins()
     }
 
     private fun getBins() {
         viewModelScope.launch {
-            try {
                 repo.getAllBinReq()
-            } catch (e: Exception) {
-
-            }
         }
-
     }
 
-    private  fun loadReq(bin: Long) {
+    fun loadReq(bin: Long) {
         viewModelScope.launch {
             try {
                 var binStr = bin.toString()
@@ -61,6 +57,7 @@ class BinReqViewModel @Inject constructor(
                 }
                 _dataState.value = FeedModelState(loading = true)
                 _binReq.value = repo.getBinReq(binStr.toLong())
+                _dataState.value = FeedModelState()
 
             } catch (e: Exception) {
                 handleError(e)
@@ -69,6 +66,7 @@ class BinReqViewModel @Inject constructor(
     }
 
     private fun handleError(e: Exception) {
+
         when (e.javaClass.name) {
             "ru.netology.binlist.error.ApiError403" -> {
                 _dataState.value = FeedModelState(error403 = true)
@@ -85,11 +83,13 @@ class BinReqViewModel @Inject constructor(
             "ru.netology.binlist.error.ApiError404" -> {
                 _dataState.value = FeedModelState(error404 = true)
             }
-
             else -> {
-
                 _dataState.value = FeedModelState(error = true)
             }
         }
+    }
+
+    fun setBin(binArg: BinRequest?) {
+        _binReq.value = binArg
     }
 }

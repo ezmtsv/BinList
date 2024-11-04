@@ -9,6 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
+import ru.netology.binlist.BuildConfig.API_KEY
 import ru.netology.binlist.BuildConfig.BASE_URL
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -29,7 +30,9 @@ class ApiServiceModule {
     ): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain ->
             val newRequest = chain.request().newBuilder()
-                .addHeader("Accept-Version", "3")
+                .addHeader("x-rapidapi-key", API_KEY)
+                .addHeader("x-rapidapi-host", "bin-ip-checker.p.rapidapi.com")
+                .addHeader("Content-Type", "application/json")
                 .build()
             return@addInterceptor chain.proceed(newRequest)
         }

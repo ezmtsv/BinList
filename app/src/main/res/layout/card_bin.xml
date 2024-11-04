@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/min_space">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cardcolor"
+        app:cardElevation="15dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/date_req"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="@dimen/common_spacing"
+                android:textColor="#009688"
+                android:textSize="@dimen/field_text"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/chip"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextContrastCheck"
+                tools:text="2024.11.03 15.45" />
+
+            <TextView
+                android:id="@+id/bank_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#009688"
+                android:textSize="@dimen/field_text"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/date_req"
+                app:layout_constraintTop_toBottomOf="@id/date_req"
+                tools:ignore="TextContrastCheck"
+                tools:text="SBER BANK" />
+
+            <ImageView
+                android:id="@+id/chip"
+                android:layout_width="@dimen/size_card"
+                android:layout_height="@dimen/size_card"
+                android:layout_marginTop="@dimen/common_spacing"
+                android:contentDescription="@string/ico_chip"
+                android:src="@drawable/ico_chip_card"
+                app:layout_constraintStart_toStartOf="@id/number"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/field_text"
+                android:textColor="#009688"
+                android:textSize="@dimen/number_text"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chip"
+                tools:ignore="TextContrastCheck"
+                tools:text="1234 56** **** ****" />
+
+            <TextView
+                android:id="@+id/scheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/common_spacing"
+                android:textColor="#009688"
+                android:textSize="@dimen/number_text"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/number"
+                app:layout_constraintTop_toBottomOf="@id/number"
+                tools:ignore="TextContrastCheck"
+                tools:text="VISA" />
+
+            <TextView
+                android:id="@+id/flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/field_text"
+                android:paddingBottom="@dimen/common_spacing"
+                android:textColor="#009688"
+                android:textSize="@dimen/number_text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/number"
+                tools:ignore="TextContrastCheck"
+                tools:text="🇪🇬" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

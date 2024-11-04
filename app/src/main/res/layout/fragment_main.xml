@@ -17,23 +17,68 @@
             android:padding="@dimen/min_space">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/time"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:layout_marginTop="@dimen/common_spacing"
+                android:hint="time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Theme.MaterialComponents.DayNight"
+                app:startIconContentDescription="time">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textColor="@color/text_color"
+                    android:inputType="none"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/number"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:layout_marginTop="@dimen/common_spacing"
+                android:hint="Number card"
+                style="@style/Theme.MaterialComponents.DayNight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/time"
+                app:startIconContentDescription="number card">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textColor="@color/text_color"
+                    android:inputType="none"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/bankName"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:layout_marginTop="@dimen/common_spacing"
                 android:hint="Bank name"
-
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/number"
                 app:startIconContentDescription="Bank Name"
                 app:startIconDrawable="@drawable/ico_bank_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
                     android:background="@color/transparent"
+                    android:inputType="none"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -44,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:hint="Bank Link"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bankName"
                 app:startIconContentDescription="Website"
@@ -53,6 +99,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -63,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:hint="Bank Phone"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bankLink"
                 app:startIconContentDescription="Bank Phone"
@@ -72,6 +120,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -82,6 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:hint="Country"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bankPhone"
                 app:startIconContentDescription="Country">
@@ -90,6 +140,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/native_lang"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="Native"
+                style="@style/Theme.MaterialComponents.DayNight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/country"
+                app:startIconContentDescription="Native">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -99,15 +170,17 @@
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Code"
+                android:hint="Language Code"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/country"
+                app:layout_constraintTop_toBottomOf="@id/native_lang"
                 app:startIconContentDescription="code">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:hint="Flag"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/code"
                 app:startIconContentDescription="flag">
@@ -126,6 +200,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -136,6 +211,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:hint="currency"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/flag"
                 app:startIconContentDescription="currency">
@@ -144,6 +220,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/currency_name"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="currency name"
+                style="@style/Theme.MaterialComponents.DayNight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/currency"
+                app:startIconContentDescription="currency name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -154,14 +251,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:hint="currency code"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/currency"
+                app:layout_constraintTop_toBottomOf="@id/currency_name"
                 app:startIconContentDescription="currency_code">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -172,6 +271,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:hint="card type"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/currency_code"
                 app:startIconContentDescription="card_type">
@@ -180,6 +280,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -190,6 +291,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:hint="card scheme"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card_type"
                 app:startIconContentDescription="card_scheme">
@@ -198,42 +300,67 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/category"
+                android:id="@+id/region"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="category"
+                android:hint="Region"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card_scheme"
-                app:startIconContentDescription="category">
+                app:startIconContentDescription="region">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/cvvlen"
+                android:id="@+id/capital"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="cvv length"
+                android:hint="Capital"
+                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/category"
-                app:startIconContentDescription="cvvlen">
+                app:layout_constraintTop_toBottomOf="@id/region"
+                app:startIconContentDescription="Capital">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/field_text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/level"
+                android:layout_width="@dimen/wide_text_field"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_spacing"
+                android:hint="Level"
+                style="@style/Theme.MaterialComponents.DayNight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/capital"
+                app:startIconContentDescription="level">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -246,6 +373,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-
         app:menu="@menu/menu_bin" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

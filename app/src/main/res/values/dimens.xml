@@ -1,9 +1,13 @@
 <resources>
     <dimen name="min_space">5dp</dimen>
+    <dimen name="mid_space">30dp</dimen>
+    <dimen name="max_space">50dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="common_spacing">16dp</dimen>
     <dimen name="button_text">18sp</dimen>
-    <dimen name="field_text">16sp</dimen>
+    <dimen name="number_text">36sp</dimen>
+    <dimen name="field_text">22sp</dimen>
     <dimen name="wide_text_field">370dp</dimen>
     <dimen name="wide_date_field">150dp</dimen>
+    <dimen name="size_card">70dp</dimen>
 </resources>

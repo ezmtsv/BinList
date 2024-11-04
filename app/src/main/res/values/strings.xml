@@ -2,4 +2,5 @@
     <string name="app_name">BinList</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ico_chip">ico_chip</string>
 </resources>

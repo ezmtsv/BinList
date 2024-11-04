@@ -1,14 +1,16 @@
 package ru.netology.binlist.dto
 
-
 import com.google.gson.annotations.SerializedName
 
+
 data class BinRequest(
-    val id: Long = 0,
-    @SerializedName("data")
-    val data: Data?,
-    @SerializedName("message")
-    val message: String?,
-    @SerializedName("result")
-    val result: Int?
+    val id: Long,
+    @SerializedName("success") val
+    success: Boolean? = null,
+    @SerializedName("code")
+    val code: Int? = null,
+    @SerializedName("BIN")
+    val bin: Bin? = null,
+    @SerializedName("IP")
+    val ip: Ip? = null
 )

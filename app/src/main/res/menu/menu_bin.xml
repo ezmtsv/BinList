@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <group android:id="@+id/authenticated">
-        <item
-            android:id="@+id/signout"
-            android:title="search"
-            app:showAsAction="never" />
-        <item
-            android:id="@+id/account"
-            android:title="history"
-            app:showAsAction="never" />
-    </group>
+    <item
+        android:id="@+id/menu_main"
+        android:enabled="true"
+        android:icon="@drawable/ico_search_24"
+        android:title="Search"/>
+    <item
+        android:id="@+id/menu_history"
+        android:enabled="true"
+        android:icon="@drawable/ico_history_24"
+        android:title="History"/>
 </menu>
 
