@@ -18,34 +18,34 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/time"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:layout_marginTop="@dimen/common_spacing"
-                android:hint="time"
+                android:hint="@string/time"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                style="@style/Theme.MaterialComponents.DayNight"
                 app:startIconContentDescription="time">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
-                    android:textColor="@color/text_color"
                     android:inputType="none"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/number"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:layout_marginTop="@dimen/common_spacing"
-                android:hint="Number card"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/number_card"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/time"
                 app:startIconContentDescription="number card">
@@ -54,20 +54,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
-                    android:textColor="@color/text_color"
                     android:inputType="none"
+                    android:linksClickable="true"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/field_text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/bankName"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
                 android:layout_marginTop="@dimen/common_spacing"
-                android:hint="Bank name"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/bank_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/number"
                 app:startIconContentDescription="Bank Name"
@@ -83,55 +84,76 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:id="@+id/bankLink"
-                android:layout_width="@dimen/wide_text_field"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Bank Link"
-                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bankName"
-                app:startIconContentDescription="Website"
-                app:startIconDrawable="@drawable/ico_link_24">
+                app:layout_constraintTop_toBottomOf="@id/bankName">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
+                <TextView
+                    android:id="@+id/web_sait"
+                    android:layout_width="@dimen/wide_text_field"
+                    android:layout_height="@dimen/max_space"
+                    android:layout_marginStart="@dimen/common_spacing"
+                    android:gravity="center_vertical"
+                    android:hint="@string/bank_link"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/field_text" />
+                    android:textSize="@dimen/field_text"
+                    app:startIconContentDescription="Website" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:id="@+id/bankPhone"
-                android:layout_width="@dimen/wide_text_field"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Bank Phone"
-                style="@style/Theme.MaterialComponents.DayNight"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bankLink"
-                app:startIconContentDescription="Bank Phone"
-                app:startIconDrawable="@drawable/ico_phone_24">
+                app:layout_constraintTop_toBottomOf="@id/bankLink">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="@dimen/wide_text_field"
+                    android:layout_height="@dimen/max_space"
+                    android:layout_marginStart="@dimen/common_spacing"
+                    android:gravity="center_vertical"
+                    android:hint="@string/bank_phone"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/field_text" />
+                    android:textSize="@dimen/field_text"
+                    app:startIconContentDescription="bankPhone" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <!--
+                        <LinearLayout
+                            android:id="@+id/bankCoords"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/common_spacing"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/bankPhone">
 
+                            <TextView
+                                android:id="@+id/coords"
+                                android:layout_width="@dimen/wide_text_field"
+                                android:layout_height="@dimen/max_space"
+                                android:layout_marginStart="@dimen/common_spacing"
+                                android:gravity="center_vertical"
+                                android:hint="@string/bank_coordinates"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/field_text"
+                                app:startIconContentDescription="bank_coordinates" />
+
+                        </LinearLayout>
+            -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/country"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Country"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/country"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bankPhone"
                 app:startIconContentDescription="Country">
@@ -147,11 +169,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/native_lang"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Native"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/_native"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/country"
                 app:startIconContentDescription="Native">
@@ -167,11 +189,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/code"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Language Code"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/language_code"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/native_lang"
                 app:startIconContentDescription="code">
@@ -187,11 +209,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/flag"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Flag"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/flag"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/code"
                 app:startIconContentDescription="flag">
@@ -207,11 +229,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/currency"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="currency"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/currency"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/flag"
                 app:startIconContentDescription="currency">
@@ -227,11 +249,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/currency_name"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="currency name"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/currency_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/currency"
                 app:startIconContentDescription="currency name">
@@ -247,11 +269,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/currency_code"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="currency code"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/currency_code"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/currency_name"
                 app:startIconContentDescription="currency_code">
@@ -267,11 +289,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/card_type"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="card type"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/card_type"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/currency_code"
                 app:startIconContentDescription="card_type">
@@ -287,11 +309,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/card_scheme"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="card scheme"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/card_scheme"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card_type"
                 app:startIconContentDescription="card_scheme">
@@ -307,11 +329,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/region"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Region"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/region"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/card_scheme"
                 app:startIconContentDescription="region">
@@ -327,11 +349,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/capital"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Capital"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/capital"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/region"
                 app:startIconContentDescription="Capital">
@@ -347,11 +369,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/level"
+                style="@style/Theme.MaterialComponents.DayNight"
                 android:layout_width="@dimen/wide_text_field"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_spacing"
-                android:hint="Level"
-                style="@style/Theme.MaterialComponents.DayNight"
+                android:hint="@string/level"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/capital"
                 app:startIconContentDescription="level">
@@ -365,7 +387,17 @@
 
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_bin"

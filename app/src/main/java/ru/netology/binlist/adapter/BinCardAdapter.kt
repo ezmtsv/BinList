@@ -6,12 +6,19 @@ import ru.netology.binlist.dto.BinRequest
 import ru.netology.binlist.util.AndroidUtils.getTime
 import javax.inject.Inject
 
+interface ListenerBinCard {
+    fun openWebView(link: String)
+    fun openDialer(tel: String)
+//    fun openMaps(geo: String)
+}
+
 class BinCardAdapter @Inject constructor(
-    private val binding: FragmentMainBinding
+    private val binding: FragmentMainBinding,
+    private val listenerBinCard: ListenerBinCard
 ) {
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "ClickableViewAccessibility")
     fun bind(bin: BinRequest) {
-        with(binding) {
+        binding.apply {
             country.isEnabled = false
             bankName.isEnabled = false
             code.isEnabled = false
@@ -29,7 +36,7 @@ class BinCardAdapter @Inject constructor(
             capital.isEnabled = false
             time.isEnabled = false
             number.isEnabled = false
-//            number.editText?.setText("${bin.bin?.number.toString()}****")
+
             bin.bin?.number?.let { number.editText?.setText("${it}****") }
             time.editText?.setText(getTime(bin.ip?.currentTime))
             country.editText?.setText(bin.bin?.country?.name)
@@ -38,8 +45,9 @@ class BinCardAdapter @Inject constructor(
             currency.editText?.setText(bin.bin?.country?.currency)
             currencyCode.editText?.setText(bin.bin?.country?.currencySymbol)
             bankName.editText?.setText(bin.bin?.issuer?.name)
-            bankLink.editText?.setText(bin.bin?.issuer?.website)
-            bankPhone.editText?.setText(bin.bin?.issuer?.phone)
+            webSait.text = bin.bin?.issuer?.website
+            phone.text = "phone: ${bin.bin?.issuer?.phone}"
+//            coords.text = "coordinates: ${bin.ip?.latitude}, ${bin.ip?.longitude}"
             cardScheme.editText?.setText(bin.bin?.scheme)
             cardType.editText?.setText(bin.bin?.type)
             level.editText?.setText(bin.bin?.level)
@@ -47,6 +55,21 @@ class BinCardAdapter @Inject constructor(
             nativeLang.editText?.setText(bin.bin?.country?.native)
             currencyName.editText?.setText(bin.bin?.country?.currencyName)
             capital.editText?.setText(bin.bin?.country?.capital)
+
+            webSait.setOnClickListener {
+                listenerBinCard.openWebView(bin.bin?.issuer?.website.toString())
+            }
+            phone.setOnClickListener {
+                bin.bin?.issuer?.phone?.let {
+                    listenerBinCard.openDialer("tel:${bin.bin.issuer.phone}")
+                }
+            }
+
+//            coords.setOnClickListener {
+//                bin.ip?.latitude?.let {
+//                    listenerBinCard.openMaps("geo:${bin.ip.latitude}, ${bin.ip.longitude}")
+//                }
+//            }
         }
     }
 }

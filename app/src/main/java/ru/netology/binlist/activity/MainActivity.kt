@@ -2,7 +2,6 @@ package ru.netology.binlist.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
@@ -54,7 +53,8 @@ class MainActivity : AppCompatActivity(), CurrentFragment {
         println("attach $nameFrag")
         if (numberBin != 0L) {
             println("numberBin $numberBin")
-            val currentFragment = supportFragmentManager.currentNavigationFragment // переменная currentNavigationFragment дает нам текущий объект франмента, и на немвы
+            val currentFragment =
+                supportFragmentManager.currentNavigationFragment // переменная currentNavigationFragment дает нам текущий объект франмента, и затем мы можеи вызвать функцию из этого фрагмента из активити
             if (currentFragment is MainFragment) currentFragment.loadBin(numberBin)
         }
         numberBin = 0

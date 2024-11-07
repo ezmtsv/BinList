@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import ru.netology.binlist.R
 import ru.netology.binlist.activity.MainActivity.Companion.longArg
 import ru.netology.binlist.databinding.FragmentSearchBinding

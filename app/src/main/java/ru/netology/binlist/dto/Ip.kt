@@ -11,9 +11,9 @@ data class Ip(
     @SerializedName("valid")
     val valid: Boolean? = null,
     @SerializedName("IP_BIN_match")
-    val IpBinMatch: Boolean? = null,
+    val ipBinMatch: Boolean? = null,
     @SerializedName("IP_BIN_match_message")
-    val IpBinMatchMessage: String? = null,
+    val ipBinMatchMessage: String? = null,
     @SerializedName("alpha2")
     val alpha2: String? = null,
     @SerializedName("flag")

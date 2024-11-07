@@ -1,6 +1,5 @@
 package ru.netology.binlist.activity
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,13 +11,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import ru.netology.binlist.R
 import ru.netology.binlist.activity.MainActivity.Companion.binArg
-import ru.netology.binlist.activity.MainActivity.Companion.longArg
 import ru.netology.binlist.adapter.BinListAdapter
 import ru.netology.binlist.adapter.ListenerSelectBin
 import ru.netology.binlist.databinding.FragmentHistoryBinding
-import ru.netology.binlist.databinding.FragmentMainBinding
 import ru.netology.binlist.dto.BinRequest
-import ru.netology.binlist.error.UnknownErrors
 import ru.netology.binlist.viewmodel.BinReqViewModel
 
 @AndroidEntryPoint
@@ -37,12 +33,13 @@ class HistoryFragment : Fragment() {
 
         val adapter = BinListAdapter(object : ListenerSelectBin {
             override fun viewBin(bin: BinRequest) {
-                findNavController().navigate(R.id.mainFragment,
+                findNavController().navigate(
+                    R.id.mainFragment,
                     Bundle().apply {
                         binArg = bin
                     },
 
-                )
+                    )
             }
         })
         binding?.list?.adapter = adapter

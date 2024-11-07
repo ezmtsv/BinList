@@ -2,7 +2,6 @@ package ru.netology.binlist.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
 import ru.netology.binlist.dto.Bin
 import ru.netology.binlist.dto.BinRequest
 import ru.netology.binlist.dto.Ip
@@ -37,4 +36,4 @@ data class BinReqEntity (
 }
 
 fun List<BinReqEntity>.toDto(): List<BinRequest> = map(BinReqEntity::toDto)
-fun List<BinRequest>.toEntity(): List<BinReqEntity> = map(BinReqEntity::fromDto)
+//fun List<BinRequest>.toEntity(): List<BinReqEntity> = map(BinReqEntity::fromDto)

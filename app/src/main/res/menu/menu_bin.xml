@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_main"
         android:enabled="true"
         android:icon="@drawable/ico_search_24"
-        android:title="Search"/>
+        android:title="@string/search_bin" />
     <item
         android:id="@+id/menu_history"
         android:enabled="true"
         android:icon="@drawable/ico_history_24"
-        android:title="History"/>
+        android:title="@string/history" />
 </menu>
 

@@ -38,6 +38,11 @@ class BinViewHolder(
             scheme.text = bin.bin?.scheme
             dateReq.text = getTime(bin.ip?.currentTime)
             bankName.text = bin.bin?.issuer?.name
+            val lenNameBank = bin.bin?.issuer?.name?.length?:0
+            if(lenNameBank > 14) {
+                println("bank ${bin.bin?.issuer?.name}, len = $lenNameBank")
+                bankName.textSize = 16F
+            }
             flag.text = bin.bin?.country?.flag
 
             root.setOnClickListener {

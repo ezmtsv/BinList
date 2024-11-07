@@ -11,7 +11,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import ru.netology.binlist.dto.BinRequest
-import ru.netology.binlist.error.DbError
 import ru.netology.binlist.model.FeedModelState
 import ru.netology.binlist.repo.RepoBinReq
 import javax.inject.Inject

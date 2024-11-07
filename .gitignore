@@ -6,6 +6,7 @@ build/
 local.properties
 maps.properties
 keyapi.properties
+keyapirapid.properties
 
 ### STS ###
 .apt_generated
