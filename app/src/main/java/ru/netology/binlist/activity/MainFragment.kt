@@ -47,22 +47,6 @@ class MainFragment : Fragment() {
                 .show()
         }
 
-//        val adapter = BinCardAdapter(binding!!, object : ListenerBinCard{
-//            override fun onShare(link: String) {
-//                println("WEBSITE LINK")
-////                if(link.isNotEmpty()) {
-////                    val intent = Intent().apply {
-////                        action = Intent.ACTION_SEND
-////                        putExtra(Intent.EXTRA_TEXT, link)
-////                        type = "text/plain"
-////                    }
-////                    val shareIntent =
-////                        Intent.createChooser(intent, "Share Post")
-////                    startActivity(shareIntent)
-////                }
-//            }
-//        })
-
         val binArg = arguments?.binArg ?: BinRequest(0)
         viewModel.setBin(binArg)
 
@@ -106,25 +90,12 @@ class MainFragment : Fragment() {
                     }
                 }
 
-//                override fun openMaps(geo: String) {
-//                    if (geo.isNotEmpty() && geo != "geo:") {
-//                        val intent = Intent().apply {
-//                            action = Intent.ACTION_VIEW
-//                            data = Uri.parse(geo)
-//                        }
-//                        startActivity(intent)
-//                    }
-//                }
             })
         }
 
         viewModel.binReq.observe(viewLifecycleOwner) {
             adapter?.bind(it)
         }
-
-//        viewModel.listBins.observe(viewLifecycleOwner) {
-////            println(it)
-//        }
 
         binding?.bottomNavigationBin?.setOnItemSelectedListener { item ->
             when (item.itemId) {

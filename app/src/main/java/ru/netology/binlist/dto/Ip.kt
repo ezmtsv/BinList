@@ -40,5 +40,4 @@ data class Ip(
     val currentTime: String? = null,
     @SerializedName("is_proxy")
     val isProxy: Boolean? = null
-
 )

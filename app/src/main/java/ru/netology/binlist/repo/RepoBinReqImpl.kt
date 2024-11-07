@@ -20,40 +20,8 @@ class RepoBinReqImpl @Inject constructor(
     private val apiService: ApiService,
     private val binDao: BinReqDao,
 ) : RepoBinReq {
-//    private val _binReqFlow = MutableStateFlow(emptyList<BinRequest>())
-//    override val binReqFlow: Flow<List<BinRequest>>
-//        get() = _binReqFlow.asStateFlow()
 
     override val binReqFlow = binDao.getAllReq().map(List<BinReqEntity>::toDto)
-
-//    val req = BinRequest(
-//        result = 200,
-//        message = "SUCCESS",
-//        data = Data(
-//            card = Card(
-//                scheme = "Visa",
-//                type = "Debit",
-//                category = "Corporate t&e",
-//                length = -1,
-//                checkluhn = 1,
-//                cvvlen = 3
-//            ),
-//
-//            country = Country(
-//                name = "Egypt",
-//                code = "eg",
-//                flag = "🇪🇬",
-//                currency = "Egyptian pound",
-//                currencyCode = "EGP"
-//            ),
-//
-//            bank = Bank(
-//                name = "ARAB INTERNATIONAL BANK",
-//                website = "http://www.aib.com.eg:81/web/wps/portal/enaib",
-//                phone = "23918794"
-//            ),
-//        )
-//    )
 
     override suspend fun getBinReq(id: Long): BinRequest {
         try {
@@ -87,14 +55,4 @@ class RepoBinReqImpl @Inject constructor(
 
     }
 
-    override suspend fun getAllBinReq() {
-//        try {
-//            binDao.getAllReq().flowOn(Dispatchers.IO).collect { list ->
-//                _binReqFlow.update { list.toDto() }
-//            }
-//        } catch (e: Exception) {
-//            //throw DbError
-//            println("DbError")
-//        }
-    }
 }

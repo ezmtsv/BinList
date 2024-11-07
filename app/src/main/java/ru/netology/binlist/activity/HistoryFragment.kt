@@ -71,25 +71,4 @@ class HistoryFragment : Fragment() {
         super.onResume()
     }
 
-//    private var curFrag: CurrentFragment? = null
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//        try {
-//            curFrag = context as CurrentFragment
-//        } catch (e: ClassCastException) {
-//            throw UnknownErrors
-//        }
-//    }
-//
-//    override fun onDetach() {
-//        super.onDetach()
-//        curFrag?.fragDetach("history")
-//        curFrag = null
-//    }
-//
-//    override fun onStart() {
-//        super.onStart()
-//        curFrag?.fragAttach("history")
-//
-//    }
 }

@@ -9,7 +9,6 @@ import javax.inject.Inject
 interface ListenerBinCard {
     fun openWebView(link: String)
     fun openDialer(tel: String)
-//    fun openMaps(geo: String)
 }
 
 class BinCardAdapter @Inject constructor(
@@ -47,7 +46,6 @@ class BinCardAdapter @Inject constructor(
             bankName.editText?.setText(bin.bin?.issuer?.name)
             webSait.text = bin.bin?.issuer?.website
             phone.text = "phone: ${bin.bin?.issuer?.phone}"
-//            coords.text = "coordinates: ${bin.ip?.latitude}, ${bin.ip?.longitude}"
             cardScheme.editText?.setText(bin.bin?.scheme)
             cardType.editText?.setText(bin.bin?.type)
             level.editText?.setText(bin.bin?.level)
@@ -65,11 +63,6 @@ class BinCardAdapter @Inject constructor(
                 }
             }
 
-//            coords.setOnClickListener {
-//                bin.ip?.latitude?.let {
-//                    listenerBinCard.openMaps("geo:${bin.ip.latitude}, ${bin.ip.longitude}")
-//                }
-//            }
         }
     }
 }

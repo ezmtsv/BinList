@@ -24,16 +24,11 @@ class MainActivity : AppCompatActivity(), CurrentFragment {
         super.onCreate(savedInstanceState)
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
-        //       this@MainActivity.onBackPressedDispatcher.addCallback(this@MainActivity, callback)
         setContentView(binding.root)
     }
 
     override fun onStart() {
         super.onStart()
-
-//        findNavController(R.id.nav_host_fragment).navigate(
-//            R.id.mainFragment
-//        )
         findNavController(R.id.nav_host_fragment).addOnDestinationChangedListener { _, destination, _ ->
             supportActionBar?.setDisplayHomeAsUpEnabled(destination.id != R.id.searchFragment)
         }
@@ -45,47 +40,23 @@ class MainActivity : AppCompatActivity(), CurrentFragment {
         return true
     }
 
-    //    override fun fragDetach(nameFrag: String) {
-//        println("detach $nameFrag")
-//    }
-//
     override fun fragAttach(nameFrag: String) {
         println("attach $nameFrag")
         if (numberBin != 0L) {
             println("numberBin $numberBin")
             val currentFragment =
-                supportFragmentManager.currentNavigationFragment // переменная currentNavigationFragment дает нам текущий объект франмента, и затем мы можеи вызвать функцию из этого фрагмента из активити
+                supportFragmentManager.currentNavigationFragment
             if (currentFragment is MainFragment) currentFragment.loadBin(numberBin)
         }
         numberBin = 0
     }
 
 
-    private val FragmentManager.currentNavigationFragment: Fragment?   // получаем переменную currentNavigationFragment
+    private val FragmentManager.currentNavigationFragment: Fragment?
         get() = primaryNavigationFragment?.childFragmentManager?.fragments?.first()
 
     override fun startSearch(num: Long) {
         numberBin = num
-//        println("currentFragment $currentFragment")
     }
 
-//    private val callback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
-//        override fun handleOnBackPressed() {
-//            when (val currentFragment = supportFragmentManager.currentNavigationFragment) {
-//                is HistoryFragment -> {
-//                    println("currentFragment HISTORY")
-//                }
-//
-//                is MainFragment -> {
-//                    println("currentFragment MAIN")
-//                }
-//
-//                is SearchFragment -> {
-//                    finish()
-//                }
-////                else->{println("currentFragment $currentFragment")}
-//            }
-//            findNavController(R.id.nav_host_fragment).navigateUp()
-//        }
-//    }
 }

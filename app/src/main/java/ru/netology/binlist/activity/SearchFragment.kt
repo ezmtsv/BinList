@@ -71,16 +71,4 @@ class SearchFragment : Fragment() {
         }
     }
 
-//    override fun onDetach() {
-//        super.onDetach()
-//        curFrag?.fragDetach("Search")
-//        curFrag = null
-//    }
-//
-//    override fun onStart() {
-//        super.onStart()
-//        curFrag?.fragAttach("Search")
-//
-//    }
-
 }

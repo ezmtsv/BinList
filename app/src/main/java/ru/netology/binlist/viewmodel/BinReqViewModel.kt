@@ -32,16 +32,6 @@ class BinReqViewModel @Inject constructor(
 
     val listBins: LiveData<List<BinRequest>> = repo.binReqFlow.asLiveData(Dispatchers.Default)
 
-    init {
- //       loadReq(403244)
-        getBins()
-    }
-
-    private fun getBins() {
-        viewModelScope.launch {
-                repo.getAllBinReq()
-        }
-    }
 
     fun loadReq(bin: Long) {
         viewModelScope.launch {

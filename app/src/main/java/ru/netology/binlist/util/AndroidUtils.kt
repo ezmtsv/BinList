@@ -7,7 +7,6 @@ import ru.netology.binlist.dto.BinRequest
 import java.lang.reflect.Type
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
-import kotlin.reflect.KProperty1
 
 object AndroidUtils {
 
@@ -28,30 +27,6 @@ object AndroidUtils {
         }
         return " "
     }
-
-    fun <T> getFieldsObj(obj: T?): HashMap<String?, String?> {  // возвращает поля класса и их значения, в gradle нужно добавить implementation "org.jetbrains.kotlin:kotlin-reflect:1.9.20"
-        val getObj: HashMap<String?, String?> = hashMapOf()
-        obj?.let {
-            it::class.java
-                .declaredFields.forEach { field ->
-                    val k = field.name
-                    val v = readInstanceProperty(obj, field.name)
-                    //println("$k = $v}")
-                    with(getObj) { put(key = k, value = v) }
-                }
-        }
-        return getObj
-    }
-
-    @Suppress("UNCHECKED_CAST")
-    private fun readInstanceProperty(instance: Any, propertyName: String): String {
-        val property = instance::class.members
-            // don't cast here to <Any, R>, it would succeed silently
-            .first { it.name == propertyName } as KProperty1<Any, *>
-        // force a invalid cast exception if incorrect type here
-        return property.get(instance).toString()
-    }
-
 
 }
 

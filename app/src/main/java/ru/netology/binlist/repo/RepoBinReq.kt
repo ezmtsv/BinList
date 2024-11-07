@@ -5,6 +5,5 @@ import ru.netology.binlist.dto.BinRequest
 
 interface RepoBinReq {
     val binReqFlow: Flow<List<BinRequest>>
-    suspend fun getBinReq(id:Long): BinRequest?
-    suspend fun getAllBinReq()
+    suspend fun getBinReq(id: Long): BinRequest?
 }

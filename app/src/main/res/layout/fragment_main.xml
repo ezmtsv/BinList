@@ -9,7 +9,8 @@
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_card">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -125,28 +126,7 @@
                     app:startIconContentDescription="bankPhone" />
 
             </LinearLayout>
-            <!--
-                        <LinearLayout
-                            android:id="@+id/bankCoords"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/common_spacing"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/bankPhone">
 
-                            <TextView
-                                android:id="@+id/coords"
-                                android:layout_width="@dimen/wide_text_field"
-                                android:layout_height="@dimen/max_space"
-                                android:layout_marginStart="@dimen/common_spacing"
-                                android:gravity="center_vertical"
-                                android:hint="@string/bank_coordinates"
-                                android:textColor="@color/text_color"
-                                android:textSize="@dimen/field_text"
-                                app:startIconContentDescription="bank_coordinates" />
-
-                        </LinearLayout>
-            -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/country"
                 style="@style/Theme.MaterialComponents.DayNight"

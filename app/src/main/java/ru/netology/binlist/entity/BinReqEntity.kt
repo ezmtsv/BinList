@@ -8,7 +8,7 @@ import ru.netology.binlist.dto.Ip
 
 
 @Entity(tableName = "BinReqEntity")
-data class BinReqEntity (
+data class BinReqEntity(
     @PrimaryKey
     val id: Long,
     val success: Boolean? = null,
@@ -36,4 +36,3 @@ data class BinReqEntity (
 }
 
 fun List<BinReqEntity>.toDto(): List<BinRequest> = map(BinReqEntity::toDto)
-//fun List<BinRequest>.toEntity(): List<BinReqEntity> = map(BinReqEntity::fromDto)
